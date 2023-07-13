@@ -1,0 +1,53 @@
+\chapter{Conclusions \& Future Work}
+
+\section{Conclusions}
+
+There are many developed methods for the detection and classification 
+of plant diseases using the leaves of plants. However, there is still 
+no efficient and effective commercial solution that can be used to
+identify diseases and plants identification. NABTA used (InceptionV3)
+for the detection of plant identification and plant diseases using healthy- and
+diseased-leaf images of plants. \\
+
+To train and test the model, we used the standard PlantVillage dataset with
+54,303 images, which were all captured in laboratory conditions. This dataset
+consists of 38 classes of different plants, we used a dataset with 4800 images 
+for cherry, 4800 for peach, 4800 for Pepper, 7200 for Potato, 4800 for Strawberry, 
+7440 for Apple, 9600 for Grape, 9600 for Corn, after splitting the
+dataset into 80 -- 20 (80\% for training, 20\% for testing),
+NABTA achieved the best accuracy rate of \\[4pt]
+\indent \textbf{99.52\%} in the InceptionV3 model for apple, \\[4pt]
+\indent \textbf{99.9\%} in the InceptionV3 model for cherry, \\[4pt]
+\indent \textbf{99.27\%} in the InceptionV3 model for grape, \\[4pt]
+\indent \textbf{99.4\%} in the InceptionV3 model for peach, \\[4pt]
+\indent \textbf{98.28\%} in the InceptionV3 model for corn, \\[4pt]
+\indent \textbf{99\%} in InceptionV3 model for potato, \\[4pt]
+\indent \textbf{99.4\%} in the InceptionV3 model for Pepper, \\[4pt]
+\indent and \textbf{99.9\%} in the InceptionV3 model for strawberries. \\[4pt]
+Moreover, NABTA allows the user to search for a plant and know information 
+about it by entering the name of the plant in the field 
+search bar and the data for this plant will be displayed. \\
+
+Finally, NABTA can classify the ripeness stages of strawberry. The proposed 
+system has three main stages; pre-processing, feature extraction, 
+and ripeness classification. which uses Object detection to allow us 
+to identify and locate objects in an image and determine and track their 
+precise locations, all while accurately labeling them, The proposed classification 
+approach was implemented by applying to resize and extracting color components 
+for each image. Then, feature extraction was applied to each pre-processed image, 
+this dataset consists of 4 classes of different stages of ripeness 
+(Green, white, pink, and green) Yolov5 model is developed for ripeness
+stage classification. For Strawberry ripeness assessment, based on the obtained
+experimental results, the highest ripeness mAP of 91.2\%.
+
+\section{For Future work}
+We aim to:
+\begin{enumerate}
+  \item Increase the number of plants in our application.
+  \item Inserting the robotics part for automatic plant care.
+  \item Detection and estimation of weeds.
+  \item Suggesting Fertilizers, Herbicides, and Insecticides for early detection of the disease for speedy treatment.
+  \item Follow the stages of plant growth.
+  \item Add an export user to manage data and model.
+  \item Add System to care with plants.
+\end{enumerate}

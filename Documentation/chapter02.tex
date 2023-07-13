@@ -1,0 +1,280 @@
+\chapter{Literature Review}
+
+
+\section{Introduction}
+
+Recently, utilizing computer vision and machine learning (ML) in food 
+products has become very wide spread, especially for products where 
+measuring color or other spectral features enables estimating the ripeness 
+and health stage. Images acquisition is performed using a physical image 
+sensor, then a dedicated computing hardware and software are used for the 
+purpose of images analysis with the objective of performing a predefined 
+visual task. Computer vision techniques allow to evaluate fruits maturity 
+and health accurately without destruction because image processing is a 
+visual technology to observe and analyze an object without touching the 
+object being observed. As discussed at the previous chapter, this project 
+presents:
+\begin{enumerate}
+    \item A deep learning-based plant recognition system to identify plant name.
+    \item a deep learning-based plant diseases recognition system to identify plant disease.
+    \item YOLO-based object detection system for monitoring the ripeness process of 
+        plants via investigating and classifying the different maturity/ripeness stages.
+\end{enumerate}
+The proposed systems based on learned features. In recent years, 
+there has been substantial work in the computer vision and ML fields
+which tackling the ripeness and health assessment and classification problem
+of fruits/vegetables. This chapter reviews a survey about current approaches which 
+tackling the ripeness and health assessment and classification problem of fruits/vegetables.
+
+
+\section{Identification of Plants using Deep learning}
+
+B. K. Varghese et. al proposed an 
+android application called INFOPLANT to identify plants using the 
+CNN (Convolutional Neural Network). Transfer learned MobileNet model is 
+used in this system. The model is trained with customized dataset which 
+is created from video of plant species. The dataset is then converted and 
+stored as .tflite file. The application predicts the input plant image with 
+the tflite model. After prediction the application will check all the labels 
+and find the label with maximum probability which gives the plant name as 
+the output. The obtained output is then connected to firebase. The output 
+will be the details like biological name, common name, location, nutrient 
+requirement needed by the plant and the medicinal value of the plant. The 
+proposed model achieved a prediction result with accuracy 
+of 99\% and validation accuracy of 95\% \cite{var20}. \\
+
+S. A. Riaz et. al presented a plant identification method 
+using multipath multi-deep convolutional network. The proposed architecture 
+illustrated consists of multiple CNN blocks, max pooling layers, flatten layer 
+and soft-max layer for the classification of the input plant images. Each block 
+consists of three convolution, one batch normalization, one max-pooling layer
+and one dense layer. The features extracted from one block is concatenated with 
+the features from second block. The soft-max layer classifies the plant species.
+This study used two datasets LeafSnap and MalayaKew and achieved accuracy of 
+99.38\% and 99.22\%, respectively \cite{rai20}. \\
+
+Kaya et. al suggested the concept of transfer learning for plants classification 
+focused on Deep Learning. This indicates the impact of four separate transfer 
+training models on plant classification for four available databases. 
+Finally, their theoretical research reveals that transfer learning offers 
+a basis of plant classification self-estimating and analysing. They use certain 
+common formats including End-to-End, Fine modulation, Fine modulation Cross
+Dataset, Deep Integrated Finetuning, Classification by RNN-CNN. Using total 
+number of 54,306 images, the proposed approach achieved accuracy 
+of 98.70\% \cite{kay19}. \\
+
+N. Manasa et. al proposed a plant identification method using watershed 
+algorithm and convolutional neural network. The input image undergoes various 
+preprocessing stages when the leaf is surrounded by multiple leaves watershed 
+algorithm is used to separate each leaf. The proposed method consists of two 
+phases training and testing phase. In this model a pre-trained convolutional 
+neural network is used to solve classification problem. Stochastic Gradient 
+Descent algorithm with momentum is used to train the network  and is successfully 
+trained with a validation accuracy of 100\% \cite{man19}. \\
+
+Beikmohammadi, and Faez. proposed a method that uses transfer learning 
+to identify plant leaf for classification. This method uses the MobileNet 
+model as a feature extractor . With the help of image label and the feature 
+vector logistic regression classifier was trained to predict the target class. 
+The presented method works directly with RGB images which eliminate the use of 
+pre-processing stage and hand-crafted feature extraction. The proposed method 
+is evaluated on flavia dataset and LeafSnap dataset and achieved accuracy of 
+99.6\% and 90.54\% respectively \cite{bei18}.
+
+
+\section{Leaf Diseases Recognition using Deep Learning}
+
+Peng Wang et. al proposed a deep 
+learning model, which is called the Coordination Attention EfficientNet 
+(CA-ENet) to identify different apple diseases. First, a 
+coordinate attention block is integrated into the EfficientNet-B4 network, 
+which embeds the feature's spatial location information by channel attention 
+to ensure that the model can learn both the channel and spatial location 
+information of important features. Then, a depth-wise separable convolution 
+is applied to the convolution module to reduce the number of parameters, and 
+the h-swish activation function is introduced to achieve the fast and 
+easy-to-quantify process. Afterward, 5,170 images are collected in the 
+field environment at the apple planting base of the Northwest A\&F University,
+while $3,000$ images are acquired from the PlantVillage public data set. 
+Also, image augmentation techniques are used to generate an Apple Leaf Disease 
+Identification Data set (ALDID), which contains 81,700 images. The experimental 
+results show that the accuracy of the CA-ENet is 98.92\% on the ALDID, and the 
+average F1-score reaches 0.988, which is better than those of common models such 
+as the ResNet-152, DenseNet-264, and ResNeXt-101 \cite{wan21}. \\
+
+HELONG YU et. al presented a method based on deep learning to identify various 
+corn illnesses. A coordinate attention block is first integrated into the 
+EfficientNet-B4 network. This block embeds the spatial location information of the 
+feature by channel attention. The convolution module is then given a depth-wise 
+separable convolution to reduce the number of parameters, and the h-swish 
+activation function is added to produce the quick and simple quantification process. 
+The findings of the experiment show that the method has the strongest identification 
+effect on 32-means samples, and the diagnostic recall for leaf spot, rust, and grey 
+spot illness is, respectively, 89.24\%, 100\%, and 90.95\%. On 32-means samples, VGG-16 
+and ResNet18 also produce the greatest diagnostic outcomes, with average diagnostic 
+accuracy of 84.42 percent and 83.75 percent, respectively. Additionally, on the 64-means 
+samples, Inception v3 (83.05\%) and VGG-19 (82.63\%) perform the best. The method used has 
+an average diagnostic accuracy of 93\% for the three corn diseases. The corn data set used 
+from the Crop Disease Recognition of the 2018 Artificial Intelligence Challenger Competition 
+(challenger.ai) Three hundred images of each disease are chosen, resulting in a total of 900 
+disease images \cite{yu21}. \\
+
+Guowei Wang et. al proposed an improved ResNet50 model for maize disease 
+identification. The framework: PaddlePaddle adjusted the learning strategy 
+through the inclined triangle learning rate, increases L2 regularization to 
+reduce overfitting, and adopts an exit strategy and ReLU incentive function. Then, 
+the first convolution kernel of the ResNet50 model was modified into three $3 x 3$. 
+the data enhancement methods, such as brightening, translation, and flipping, were 
+used to expand the data set. The image recognition accuracy in the dataset is 
+98.52\%, the image recognition accuracy in the farmland is 97.826\%, and the 
+average recognition speed is $204ms$, which meets the accuracy and speed requirements 
+of the maize field spraying operation\cite{wan2_21}. \\
+
+Miaomiao Ji et. al proposed a united convolutional neural networks 
+(CNNs) architecture based on an integrated method. The proposed CNNs 
+architecture was designed to distinguish leaves with common grape 
+diseases i.e., black rot, esca, and isariopsis leaf spot from healthy leaves. 
+The proposed the UnitedModel which is a united CNNs architecture based on 
+InceptionV3 and ResNet50 and can be used to classify grape images, the combination of 
+multiple CNNs enables the proposed UnitedModel to extract complementary discriminative 
+features. Thus the representative ability of UnitedModel has been enhanced. The 
+UnitedModel has been evaluated on the hold-out PlantVillage dataset and has been 
+compared with several state-of-the-art CNN models. The experimental results have 
+shown that UnitedModel achieved the best performance on various evaluation metrics. The 
+UnitedModel achieved an average validation accuracy of 99.17\% and a test accuracy of 
+98.57\%, which can serve as a decision support tool to help 
+farmers identify grape diseases \cite{ji20}.
+
+\section{Ripeness Stages Identification using Deep Learning}
+
+Rucha Thakur et. al  suggested an automated system that predict the ripeness 
+level of strawberry fruit, using a convolutional neural network. The surface 
+color of strawberry fruit determines its ripeness level. CNN is used to extract 
+color, size and shape features from strawberry surfaces.In the system, the input 
+image is fed to the Convolutional neural network. In CNN, the image is segmented 
+for easy analysis. Feature Extraction provided by CNN to automatically extract all 
+the necessary features through the pool of Network. Based on the Feature Extraction, 
+training is done. The testing data is passed for two stage classification 
+based on features: size, shape, and surface color. The stage 1 classification is done between 
+the raw and ripe, if the output is ripe it is passed to the stage 2 classification, else the 
+output is Raw. In stage 2 classification is done between ripe and damage. The output of stage 2
+determines whether strawberry is ripe or damaged. The classification output along with the image 
+classified is shown on the GUI.The dataset of the system includes images of three classes of 
+Strawberry fruit: premature, mature and over mature. Since the images of premature and over-mature 
+strawberries are acquired, the dataset for premature and over-mature strawberries are created 
+anually with the help of a standard camera and downloaded through web images. The images for 
+mature strawberries are acquired through google images. The dataset includes a total of 240 images 
+for training purpose and 60 images for the testing purpose. The developed system 
+achieves 91.6\% accuracy \cite{tha20}. \\
+
+Yuanyuan Shao et. al presented a method for assessment of strawberry ripeness using 
+Hyperspectral Imaging. Portable hyperspectral imaging was used for field and indoor 
+spectra acquisition of the strawberries to extract the effective wavelengths. Two 
+classifiers, partial least squares - discriminant analysis (PLS-DA) 
+and least squares - support vector machine (LS-SVM) were used for ripeness assessment. The 
+results showed that the overall accuracy of all classifiers for field assessment ranged from 
+91.7\% to 96.7\%, slightly lower than for indoor assessment. Furthermore, the LS-SVM model 
+combined with effective wavelengths with the CARS method performed better for the field 
+assessment of strawberry ripeness, providing an accuracy of 96.7\%. It can be concluded 
+that hyperspectral imaging can be used for the real-time assessment of strawberry ripeness 
+in the field. Finally, the performance of PLS-DA and LS-SVM models was assessed with 
+discrimination accuracy for strawberries of each ripeness level. data set Field experiments
+were conducted in the strawberry garden at New Green Vegetable Cooperative in Tai'an City, 
+Shandong Province, China on a sunny morning in March 2019 \cite{sha20}.
+
+\newpage
+\section{Summarizes the Presented Exhaustive}
+
+Table (\ref{tblr:summarizes}) summarizes the presented exhaustive survey of state-of-the art 
+studies related to plant recognition, diseases recognition, and ripeness 
+assessment approaches based on deep Learning. \\\\
+
+\begin{longtblr}[
+        caption = {Summarizes the presented exhaustive.},
+        label = {tblr:summarizes},
+    ] {
+        colspec = {cp{3cm}p{2.3cm}p{3.5cm}p{2.3cm}}, 
+        rowhead = 1, rows={font=\fontsize{9}{10}},
+        hlines, vlines,
+        cell{1}{1,2,3,4,5} = {c=1}{c}
+    }
+    
+    {\bf Author}
+    & {\bf Objectives}
+    & \makecell{{\bf Deep Learning} \\[-3pt] {\bf Model}}
+    & {\bf Dataset}
+    & \makecell{{\bf Performance} \\[-3pt] {\bf Measures}} \\
+    
+    \makecell[c]{2020 \\ \cite{var20}}
+    & \raggedright Identification of plants using the CNN (Convolutional Neural Network).
+    & MobileNet 
+    & \raggedright Dataset which is created from video of plant species. The dataset is  then converted and stored as .tflite file.
+    & \raggedright Prediction accuracy = 99\%, Validation accuracy = 95\%. \\
+    
+    \makecell[c]{2020 \\ \cite{rai20}}
+    & \raggedright Identification of plants using multipath multi deep convolutional network.
+    & MPF-CNN 
+    & \raggedright Leafsnap and MalayaKew datasets.
+    & \raggedright LeafSnap dataset: Accuracy= 99.38\% MalayaKew dataset: Accuracy = 99.22\%. \\
+    
+    \makecell[c]{2019 \\ \cite{kay19}}
+    & \raggedright Identification of plants using Transfer learning method use on deep learning.
+    & DNN 
+    & \raggedright Using total number of $54,306$ images.
+    & \raggedright Accuracy = 98.70\%. \\
+    
+    \makecell[c]{2019 \\ \cite{man19}}
+    & \raggedright Identification of plants using watershed algorithm and convolutional neural network.
+    & \raggedright Multi-scale fusion convolutional neural network (MSF-CNN) for plant leaf recognition at multiple scales.
+    & \raggedright Leafsnap and MalayaKew datasets.
+    & \raggedright Validation accuracy = 100\%. \\
+    
+    \makecell[c]{2018 \\ \cite{bei18}}
+    & \raggedright Identification of plant leaf for classification using transfer learning.
+    & MobileNet
+    & \raggedright Flavia and LeafSnap datasets.
+    & \raggedright Flavia dataset: Accuracy = 99.6\%. LeafSnap dataset: Accuracy = 90.54\%. \\
+
+    \makecell[c]{2021 \\ \cite{wan21}}
+    & \raggedright Identification of different apple diseases.
+    & EfficientNet (CA-ENet).
+    & \raggedright A total of $5,170$ images are collected in the field environment at the apple planting  
+        base of the Northwest A\&F University, while $3,000$ images are acquired 
+        from the PlantVillage public data set.
+    & \raggedright Accuracy = 98.92\% on the Apple Leaf Disease Identification F1-score = 98.8\%. \\
+    
+    \makecell[c]{2021 \\ \cite{yu21}}
+    & \raggedright Addressing the problem of accurate diagnosis of corn crop diseases and the stages of corn growth and production.
+    & \raggedright Hybrid method based on K-means clustering and an improved deep learning model.
+    & \raggedright The corn data set used in this study is from the Crop Disease Recognition of the 
+        $2018$ Artificial Intelligence Challenger Competition (challenger.ai).total of $900$ disease images.
+    & \raggedright Accuracy = 98\%. \\
+    
+    \makecell[c]{2021 \\ \cite{wan2_21}}
+    & \raggedright Improving the accuracy of maize disease identification.
+    & ResNet50
+    & \raggedright The training and verification dataset from the PlantVillage 
+        dataset. The test data are collected in the actual environment.
+    & \raggedright Accuracy = 97.826\%. \\
+    
+    \makecell[c]{2020 \\ \cite{ji20}}
+    & \raggedright Identification of leaves affected by common grape diseases.
+    & ResNet50
+    & \raggedright PlantVillage dataset.
+    & \raggedright Validation accuracy = 99.17\%. Test accuracy = 98.57\%. \\
+    
+    \makecell[c]{2020 \\ \cite{tha20}}
+    & \raggedright Predict the ripeness level of strawberry fruit.
+    & CNN 
+    & \raggedright The dataset includes a total of $240$ images for training purpose and $60$ 
+        images for the testing purpose from web images and google images.
+    & \raggedright Accuracy: 91.6\%. \\
+    
+    \makecell[c]{2021 \\ \cite{sha20}}
+    & \raggedright Assessment of Strawberry Ripeness Using Hyperspectral Imaging.
+    & \raggedright Two classifiers, partial least squares - discriminant analysis (PLS-DA)
+        and least squares - support vector machine (LS-SVM).
+    & \raggedright data set Field experiments were conducted in the strawberry garden at New Green Vegetable Cooperative.
+    & \raggedright Accuracy: 96.7\%. \\
+        
+\end{longtblr}

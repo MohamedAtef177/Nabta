@@ -1,0 +1,83 @@
+\documentclass[twoside, 12pt, a4paper, english]{book}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{makecell}
+\usepackage{tabularray}
+\usepackage{array}
+\usepackage{microtype}
+
+\usepackage{fouriernc}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+
+\usepackage{amsmath}
+
+\usepackage{makeidx}
+\usepackage{enumitem}
+
+
+\usepackage[scaled=0.95]{inconsolata}
+
+\usetikzlibrary{patterns, snakes}
+\pagestyle{plain}
+
+\usepackage[a4paper, vmargin=30mm, hmargin=33mm, footskip=15mm]{geometry}
+
+\title{\includegraphics[height=4cm]{photos/logo.png} \\[1cm] \resizebox{6cm}{!}{NABTA}}
+\author{\resizebox{2.5cm}{!}{July 2022}}
+\date{}
+
+\makeindex
+\usepackage[totoc]{idxlayout}
+
+\titleformat{\subsubsection}
+{\normalfont\large\bfseries\sffamily}{\thesubsection}{1em}{}
+
+\titleformat{\section}
+{\raggedright\Large\sffamily\bf}{\thesection}{1em}{}
+
+\begin{document}
+
+\frontmatter
+\maketitle
+\setcounter{tocdepth}{2}
+
+\include{acknowledgements}
+\include{abstract}
+
+\tableofcontents
+\listoffigures
+
+\mainmatter
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\renewcommand{\baselinestretch}{1.5} 
+\newcommand{\key}[1] {\textbf{#1}}
+
+\include{chapter01}
+\include{chapter02}
+\include{chapter03}
+\include{chapter04}
+\include{chapter05}
+\include{chapter06}
+
+\cleardoublepage
+\phantomsection
+\include{list}
+
+% \cleardoublepage
+% \printindex
+
+\end{document}
